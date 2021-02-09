@@ -1,0 +1,4 @@
+DBURL = 'jdbc:mysql://127.0.0.1:3306/angielski'
+DBUSER = 'root'
+DBPASS = ''
+DBDRIVER = 'com.mysql.jdbc.Driver'

@@ -1,17 +1,20 @@
 package gui;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 
 
 public class SystemSlow {
-    private final static String DBURL = "jdbc:mysql://127.0.0.1:3306/angielski";
-    private final static String DBUSER = "root";
-    private final static String DBPASS = "";
-    private final static String DBDRIVER = "com.mysql.jdbc.Driver";
+    private static String DBURL; //= "jdbc:mysql://127.0.0.1:3306/angielski";
+    private static String DBUSER;// = "root";
+    private static String DBPASS;// = "";
+    private static String DBDRIVER;// = "com.mysql.jdbc.Driver";
     
     private static Connection connection;
     private static Statement statement;
@@ -20,6 +23,26 @@ public class SystemSlow {
     private static ArrayList<String> englishWords = new ArrayList<>();
     private static Set<Integer> usedWordsInTestNumbers = new HashSet<>();
     private SystemSlow() {
+    }
+    public static void downloadSettingFromFile() throws FileNotFoundException{
+        File file = new File("DatabaseSettings.txt");
+        Scanner myReader = new Scanner(file);
+        int i=0;
+        while (myReader.hasNextLine()) {
+            String line = myReader.nextLine();
+            String data = line.substring(line.indexOf("'")+1,line.lastIndexOf("'"));
+            if(i==0){
+                DBURL=data;
+            }else if(i==1){
+                DBUSER=data;
+            }else if(i==2){
+                DBPASS=data;
+            }else if(i==3){
+                DBDRIVER=data;
+            }else
+                break;
+            i++;     
+        }  
     }
     public static ArrayList<String> getPolishWords(){
         return polishWords;
