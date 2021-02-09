@@ -24,16 +24,14 @@ the base. In addition, last test result is recorded for each section in sql
 ## Run project
 Sample file sql is included with the project - **angielski.sql** (about 400 words)
 
-We must configure this code in **SystemSlow.java** for proper connection to the base:
+We must configure sql settings in **DatabaseSettings.txt** for proper connection to the base:
 
-    ...
-    private final static String DBURL = "jdbc:mysql://127.0.0.1:3306/angielski";
-    private final static String DBUSER = "root";
-    private final static String DBPASS = "";
-    private final static String DBDRIVER = "com.mysql.jdbc.Driver";
-    ...
+    DBURL = 'jdbc:mysql://127.0.0.1:3306/angielski'
+    DBUSER = 'root'
+    DBPASS = ''
+    DBDRIVER = 'com.mysql.jdbc.Driver'
 
-After run our local server e.g. with xampp, we can run the application.
+After run local server e.g. with xampp, we can run the application.
 
 
     
