@@ -1,7 +1,7 @@
 # LearnEnglish
 ## (Java, NetBeans, JDBC, MySQL)
 
-The application was written for individual use, but of course other users can benefit from it because app is friendly and 99% complete. 
+The application was written for individual use, but of course other users can use it, because app is friendly and 99% complete. 
 The project provides for the possibility of 2 types of learning: normal and tests. All words is saved in SQL base and we can add new words in application to 
 the database. In addition, last test result is recorded for each section in sql
 
